@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+
+
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
@@ -17,14 +19,13 @@ export class LoginComponent {
   email:string=''
   submitted:boolean=false
   loginForm:FormGroup
-
   ngonInit(){
     
   }
   constructor(private fb: FormBuilder){
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(40)]]
+      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(40)]],
     });
   }
 
@@ -33,6 +34,7 @@ export class LoginComponent {
   }
   
   loginUser(){
+    
     console.log('Hello');
     
   }
